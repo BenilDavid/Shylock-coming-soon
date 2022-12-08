@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import logo from './shylock-logo.png';
 import './App.css';
@@ -10,14 +11,17 @@ import 'animate.css';
 function App() {
 
   const [typeStart, setTypeStart] = useState(false);
+
   useEffect(() => {
     setTimeout(() => {
       document.getElementById("backgroundMusic").play();
     }, 1500);
+
     setTimeout(() => {
       setTypeStart(!typeStart);
     }, 7000);
-  }, [])
+   
+  },[])
 
   return (
     <div className="App">
@@ -37,7 +41,7 @@ function App() {
                   autoStart: typeStart,
                   loop: true,
                   delay: 40,
-                  pauseFor: 100000,
+                  pauseFor: 10000,
                 }}
               />
             </p>
