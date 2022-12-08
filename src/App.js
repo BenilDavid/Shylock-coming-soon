@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from './shylock-logo.png';
 import './App.css';
 import twitterIcon from './twitter.png';
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
 import Coming from './Audio/coming-soon.mp3';
 import Typewriter from 'typewriter-effect';
 import 'animate.css';
