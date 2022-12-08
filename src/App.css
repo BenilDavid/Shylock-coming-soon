@@ -40,12 +40,12 @@
 }
 .main-content p{
   font-size: calc(10px + 1.5vmin);
-  width: 70%;
+  width: 60%;
 }
-.header{
-  padding: 10px 10px;
+.footer{
+  padding: 20px 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .d-none{
   display: none;
@@ -82,4 +82,8 @@ top:12px;
 .intent-tweet a{
   text-decoration: none;
   color: #ff8012;
+}
+
+.animate__animated.animate__fadeInUp {
+  animation-delay: 12s;
 }
