@@ -20,19 +20,30 @@
   color: white;
 }
 
+
 .App-header .container{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
   width: 95%;
   height: 90vh;
   margin: 20px;
-  border: 1px solid #d5a46b;
+  border: 1px solid #fff;
+  /* border: 1px solid #d5a46b; */
   border-radius: 5px;
+}
+.main-content{
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.App-link {
-  color: #61dafb;
+.header{
+  padding: 10px 10px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .twitter-btn{
@@ -41,7 +52,6 @@
   cursor: pointer;
   position: relative;
   color: #fff;
-  /* padding: 10px 10px 10px 30px; */
   outline: none;
   border: 1px solid #fff;
   border-radius: 50%;
@@ -54,4 +64,19 @@
 position: absolute;
 left: 10px;
 top:12px;
+}
+
+.intent-tweet{
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #fff;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.intent-tweet a{
+  text-decoration: none;
+  color: #fff;
 }
