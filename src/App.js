@@ -6,22 +6,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+       <div className="container">
+       <img src={logo} className="App-logo" alt="logo" />
         <p>
           Comming Soon
         </p>
         <button className="twitter-btn">
+          <a href="https://twitter.com/shylocknft">
           <img src={twitterIcon} className="twitter-logo" alt="twitter" />
-          @ SHYLOCK
+          </a>
           </button>
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          twitter
-        </a> */}
+       </div>
       </header>
     </div>
   );
