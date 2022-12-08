@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   background-color: #191919;
-
 }
 
 .App-logo {
@@ -17,9 +16,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ff8012;
 }
-
 
 .App-header .container{
   display: flex;
@@ -29,7 +27,7 @@
   width: 95%;
   height: 90vh;
   margin: 20px;
-  border: 1px solid #fff;
+  border: 1px solid #ff8012;
   /* border: 1px solid #d5a46b; */
   border-radius: 5px;
 }
@@ -40,18 +38,23 @@
   align-items: center;
   justify-content: center;
 }
+.main-content p{
+  font-size: calc(10px + 1.5vmin);
+  width: 70%;
+}
 .header{
   padding: 10px 10px;
   display: flex;
   justify-content: flex-end;
 }
-
+.d-none{
+  display: none;
+}
 .twitter-btn{
   width: 40px;
  height: 40px;
   cursor: pointer;
   position: relative;
-  color: #fff;
   outline: none;
   border: 1px solid #fff;
   border-radius: 50%;
@@ -69,14 +72,14 @@ top:12px;
 .intent-tweet{
   cursor: pointer;
   padding: 10px 15px;
-  color: #fff;
+  color: #ff8012;
   outline: none;
-  border: 1px solid #fff;
+  border: 1px solid #ff8012;
   border-radius: 3px;
   background-color: transparent;
 }
 
 .intent-tweet a{
   text-decoration: none;
-  color: #fff;
+  color: #ff8012;
 }
