@@ -12,21 +12,6 @@ body {
   background: linear-gradient(0deg, #1f0b00 0%, #000000 100%);
 }
 
-body::before{
-  z-index: 1000;
-  bottom: 0;
-  content: " ";
-  display: block;
-  left: 0;
-  pointer-events: none;
-  right: 0;
-  top: 0;
-  z-index: 2;
-  background: linear-gradient(hsla(0,6%,7%,0) 50%,rgba(0,0,0,.25) 0),linear-gradient(90deg,rgba(255,0,0,.06),rgba(0,255,0,.02),rgba(0,0,255,.06));
-  background-size: 100% 4px,3px 100%;
-  position: fixed;
-}
-
 code {
   font-family: 'IBM Plex Mono', monospace;
 }

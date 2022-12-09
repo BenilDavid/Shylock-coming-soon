@@ -31,7 +31,7 @@ function App() {
         <div className="container">
           <div className="main-content">
 
-            <img src={logo} className="App-logo animate__animated animate__fadeIn" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" />
             <button className={`initiate-btn animate__animated animate__fadeInUp ${portionCount === 1 ? "animate__animated animate__fadeOut" : portionCount !== 0 ? "d-none" : ""}`} onClick={Initiation}> BEGIN </button>
 
             {portionCount === 1 ?
@@ -43,7 +43,7 @@ function App() {
                   <div className="type-container">
                     <Typewriter
                       options={{
-                        strings: ['Early Interactions in the waiting room will be Rewarded a POAP. Time is running out.'],
+                        strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
                         autoStart: true,
                         loop: true,
                         delay: 40,
