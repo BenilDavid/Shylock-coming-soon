@@ -4,12 +4,14 @@ import './App.css';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
 import Coming from './Audio/coming-soon.mp3';
+import Typing from './Audio/typing.mp3';
 import Typewriter from 'typewriter-effect';
 import 'animate.css';
 
 function App() {
 
   const [jasperAudio, setjasperAudio] = useState(false);
+  const [typingAudio, setTypingAudio] = useState(false);
   const [portionCount, setportionCount] = useState(0);
 
   const Initiation = () => {
@@ -18,6 +20,7 @@ function App() {
 
   const EndOfVoice = () => {
     setportionCount(2);
+    setTypingAudio(true);
   }
   const VoiceReady = () => {
     setjasperAudio(true);
@@ -36,18 +39,27 @@ function App() {
 
             {portionCount === 1 ?
               <>
-                <ReactPlayer className="d-none" url={Coming} playing={jasperAudio} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} onReady={VoiceReady} />
+                <ReactPlayer className="d-none" url={Coming} playing={jasperAudio} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} onReady={VoiceReady} /> 
+                
               </>
               : portionCount === 2 ?
                 <>
                   <div className="type-container">
+                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={false} playbackRate={1.2} />
                     <Typewriter
                       options={{
-                        strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
+                        // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
                         autoStart: true,
-                        loop: true,
+                        loop: false,
                         delay: 40,
                         pauseFor: 100000,
+                      }}
+                      onInit={(typewriter) => {
+                        typewriter.typeString('Early Interactions in the waiting room will be rewarded a POAP. Time is running out.')
+                          .callFunction(() => {
+                            setTypingAudio(false);
+                          })
+                          .start();
                       }}
                     />
                   </div>
