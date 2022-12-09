@@ -38,9 +38,10 @@
   align-items: center;
   justify-content: center;
 }
-.main-content p{
+.main-content .type-container{
   font-size: calc(10px + 1.5vmin);
   width: 60%;
+  margin: 20px 0;
 }
 .footer{
   padding: 20px 10px;
@@ -59,7 +60,7 @@
   border: 1px solid #fff;
   border-radius: 50%;
   background-color: transparent;
-  animation-delay: 14s;
+  animation-delay: 6s;
 }
 
 .twitter-logo{
@@ -70,7 +71,7 @@ left: 10px;
 top:12px;
 }
 
-.intent-tweet{
+.intent-tweet, .initiate-btn{
   cursor: pointer;
   padding: 10px 15px;
   color: #ff8012;
@@ -86,5 +87,5 @@ top:12px;
 }
 
 .animate__animated.animate__fadeInUp {
-  animation-delay: 12s;
+  animation-delay: 5s;
 }
