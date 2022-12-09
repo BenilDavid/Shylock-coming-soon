@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from './shylock-logo.png';
+import logo from './shylock-final-logo.png';
 import './App.css';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
