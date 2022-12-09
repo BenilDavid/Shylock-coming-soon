@@ -35,7 +35,7 @@ function App() {
           <div className="main-content">
 
             <img src={logo} className="App-logo" alt="logo" />
-            <button className={`initiate-btn animate__animated animate__fadeInUp ${portionCount === 1 ? "animate__animated animate__fadeOut" : portionCount !== 0 ? "d-none" : ""}`} onClick={Initiation}> BEGIN </button>
+            <button className={`initiate-btn  ${portionCount === 1 ? "animate__animated animate__fadeOut" : portionCount !== 0 ? "d-none" : "animate__animated animate__fadeInUp animate__delay-1s"}`} onClick={Initiation}> BEGIN </button>
 
             {portionCount === 1 ?
               <>
