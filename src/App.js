@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import logo from './shylock-logo.png';
 import './App.css';
 import twitterIcon from './twitter.png';
@@ -12,17 +12,15 @@ function App() {
   const [jasperAudio, setjasperAudio] = useState(false);
   const [portionCount, setportionCount] = useState(0);
 
-  useEffect(() => {
-    if (portionCount === 1) {
-      setTimeout(() => {
-        setportionCount(2);
-      }, 9000);
-    }
-  }, [portionCount])
-
   const Initiation = () => {
-    setjasperAudio(true);
     setportionCount(1);
+  }
+
+  const EndOfVoice = () => {
+    setportionCount(2);
+  }
+  const VoiceReady = () => {
+    setjasperAudio(true);
   }
 
   return (
@@ -33,12 +31,12 @@ function App() {
         <div className="container">
           <div className="main-content">
 
-            <img src={logo} className="App-logo" alt="logo" />
-            <button className={`initiate-btn ${portionCount === 1 ? "animate__animated animate__fadeOut" : portionCount !== 0 ? "d-none" : ""}`} onClick={Initiation}> BEGIN </button>
+            <img src={logo} className="App-logo animate__animated animate__fadeIn" alt="logo" />
+            <button className={`initiate-btn animate__animated animate__fadeInUp ${portionCount === 1 ? "animate__animated animate__fadeOut" : portionCount !== 0 ? "d-none" : ""}`} onClick={Initiation}> BEGIN </button>
 
             {portionCount === 1 ?
               <>
-                <ReactPlayer className="d-none" url={Coming} playing={jasperAudio} controls={true} volume={1} muted={false} loop={false} />
+                <ReactPlayer className="d-none" url={Coming} playing={jasperAudio} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} onReady={VoiceReady} />
               </>
               : portionCount === 2 ?
                 <>
