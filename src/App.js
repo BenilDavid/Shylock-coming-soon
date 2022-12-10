@@ -4,7 +4,8 @@ import './App.css';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
 import Coming from './Audio/coming-soon.mp3';
-import Typing from './Audio/typing.mp3';
+import Typing from './Audio/type-sound.mp3';
+import Bgm from './Audio/shylock-bgm.wav';
 import Typewriter from 'typewriter-effect';
 import 'animate.css';
 
@@ -12,10 +13,12 @@ function App() {
 
   const [jasperAudio, setjasperAudio] = useState(false);
   const [typingAudio, setTypingAudio] = useState(false);
+  const [bgmAudio, setBgmAudio] = useState(false);
   const [portionCount, setportionCount] = useState(0);
 
   const Initiation = () => {
     setportionCount(1);
+    setBgmAudio(true);
   }
 
   const EndOfVoice = () => {
@@ -33,6 +36,12 @@ function App() {
 
         <div className="container">
           <div className="main-content">
+            {portionCount !== 0 ?
+            <> 
+              <ReactPlayer className="d-none" url={Bgm} playing={bgmAudio} controls={true} volume={1} muted={false} loop={true} /> 
+            </>
+          : ""}
+        
 
             <img src={logo} className="App-logo" alt="logo" />
             <button className={`initiate-btn  ${portionCount === 1 ? "animate__animated animate__fadeOut" : portionCount !== 0 ? "d-none" : "animate__animated animate__fadeInUp animate__delay-1s"}`} onClick={Initiation}> BEGIN </button>
@@ -40,18 +49,19 @@ function App() {
             {portionCount === 1 ?
               <>
                 <ReactPlayer className="d-none" url={Coming} playing={jasperAudio} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} onReady={VoiceReady} /> 
+              
                 
               </>
               : portionCount === 2 ?
                 <>
                   <div className="type-container">
-                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={false} playbackRate={1.2} />
+                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={true} playbackRate={1.2} />
                     <Typewriter
                       options={{
                         // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
                         autoStart: true,
                         loop: false,
-                        delay: 40,
+                        delay: 45,
                         pauseFor: 100000,
                       }}
                       onInit={(typewriter) => {
