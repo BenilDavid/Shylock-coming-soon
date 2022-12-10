@@ -22,14 +22,16 @@ function App() {
 
   const EndOfVoice = () => {
     setportionCount(2);
-    
   }
+
   const TypingAudioReady = () => {
     setTypingAudio(true);
   } 
+
   const VoiceReady = () => {
     setjasperAudio(true);
   }
+  
   const BgmReady = () => {
     setBgmAudio(true);
   }
@@ -63,8 +65,6 @@ function App() {
                   <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={true} playbackRate={1.2} onReady={TypingAudioReady} />
                     <Typewriter
                       options={{
-                        // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
-                        autoStart: true,
                         loop: false,
                         delay: 45,
                         pauseFor: 100000,
