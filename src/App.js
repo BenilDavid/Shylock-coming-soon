@@ -5,7 +5,7 @@ import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
 import Coming from './Audio/coming-soon.mp3';
 import Typing from './Audio/type-sound.mp3';
-import Bgm from './Audio/shylock-bgm.wav';
+import Bgm from './Audio/shylock-bgm.mp3';
 import Typewriter from 'typewriter-effect';
 import 'animate.css';
 
@@ -18,7 +18,6 @@ function App() {
 
   const Initiation = () => {
     setportionCount(1);
-    setBgmAudio(true);
   }
 
   const EndOfVoice = () => {
@@ -27,6 +26,9 @@ function App() {
   }
   const VoiceReady = () => {
     setjasperAudio(true);
+  }
+  const BgmReady = () => {
+    setBgmAudio(true);
   }
 
   return (
@@ -38,7 +40,7 @@ function App() {
           <div className="main-content">
             {portionCount !== 0 ?
             <> 
-              <ReactPlayer className="d-none" url={Bgm} playing={bgmAudio} controls={true} volume={1} muted={false} loop={true} /> 
+              <ReactPlayer className="d-none" url={Bgm} playing={bgmAudio} controls={true} volume={1} muted={false} loop={true} onReady={BgmReady} /> 
             </>
           : ""}
         
