@@ -61,7 +61,7 @@ function App() {
               : portionCount === 2 ?
                 <>
                   <div className="type-container">
-                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={true} playbackRate={1.3} onReady={TypingAudioReady} />
+                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={true} playbackRate={1} onReady={TypingAudioReady} />
 
                     {startType ?
                     <Typewriter
