@@ -4,7 +4,7 @@ import './App.css';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
 import Coming from './Audio/coming-soon.mp3';
-import Typing from './Audio/type-sound.mp3';
+import Typing from './Audio/typeSound.mp3';
 import Bgm from './Audio/shylock-bgm.mp3';
 import Typewriter from 'typewriter-effect';
 import 'animate.css';
@@ -59,22 +59,21 @@ function App() {
               : portionCount === 2 ?
                 <>
                   <div className="type-container">
-                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={false} playbackRate={1.4} onReady={TypingAudioReady} />
+                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={false} playbackRate={1.3} onReady={TypingAudioReady} />
                     <Typewriter
-                      onInit={(typewriter) => {
-                        typewriter.typeString('Early Interactions in the waiting room will be rewarded a POAP. Time is running out.')
-                          .callFunction(() => {
-                            setTypingAudio(false);
-                          })
-                          // typingAudio ? typewriter.start() : typewriter.stop();
-                          .start();
-                      }}
+                      // onInit={(typewriter) => {
+                      //   typewriter.typeString('Early Interactions in the waiting room will be rewarded a POAP. Time is running out.')
+                      //     .callFunction(() => {
+                      //       setTypingAudio(false);
+                      //     })
+                      //     .start();
+                      // }}
                       options={{
-                        // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
+                        strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
                         loop: false,
-                        // autoStart: true,
+                        autoStart: true,
                         delay: 45,
-                        // pauseFor: 100000,
+                        pauseFor: 100000,
                       }}
                     />
                   </div>
