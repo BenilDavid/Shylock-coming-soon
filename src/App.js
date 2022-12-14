@@ -11,9 +11,9 @@ import 'animate.css';
 
 function App() {
 
-  const [jasperAudio, setjasperAudio] = useState(false);
+  // const [jasperAudio, setjasperAudio] = useState(false);
   const [typingAudio, setTypingAudio] = useState(false);
-  const [bgmAudio, setBgmAudio] = useState(false);
+  // const [bgmAudio, setBgmAudio] = useState(false);
   const [portionCount, setportionCount] = useState(0);
 
   const Initiation = () => {
@@ -28,53 +28,53 @@ function App() {
     setTypingAudio(true);
   } 
 
-  const VoiceReady = () => {
-    setjasperAudio(true);
-  }
+  // const VoiceReady = () => {
+  //   setjasperAudio(true);
+  // }
   
-  const BgmReady = () => {
-    setBgmAudio(true);
-  }
+  // const BgmReady = () => {
+  //   setBgmAudio(true);
+  // }
 
   return (
     <div className="App">
-
       <header className="App-header">
 
         <div className="container">
           <div className="main-content">
             {portionCount !== 0 ?
             <> 
-              <ReactPlayer className="d-none" url={Bgm} playing={bgmAudio} controls={true} volume={1} muted={false} loop={true} onReady={BgmReady} /> 
+              <ReactPlayer className="d-none" url={Bgm} playing={true} controls={true} volume={1} muted={false} loop={true} /> 
             </>
           : ""}
         
-
             <img src={logo} className="App-logo" alt="logo" />
             <button className={`initiate-btn  ${portionCount === 1 ? "animate__animated animate__fadeOut" : portionCount !== 0 ? "d-none" : "animate__animated animate__fadeInUp animate__delay-1s"}`} onClick={Initiation}> BEGIN </button>
 
             {portionCount === 1 ?
               <>
-                <ReactPlayer className="d-none" url={Coming} playing={jasperAudio} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} onReady={VoiceReady} /> 
-              
+                <ReactPlayer className="d-none" url={Coming} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} /> 
                 
               </>
               : portionCount === 2 ?
                 <>
                   <div className="type-container">
-                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={true} playbackRate={1.2} onReady={TypingAudioReady} />
+                  <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={false} playbackRate={1.4} onReady={TypingAudioReady} />
                     <Typewriter
-                      options={{
-                        loop: false,
-                        delay: 45,
-                        pauseFor: 100000,
-                      }}
                       onInit={(typewriter) => {
                         typewriter.typeString('Early Interactions in the waiting room will be rewarded a POAP. Time is running out.')
                           .callFunction(() => {
                             setTypingAudio(false);
                           })
+                          // typingAudio ? typewriter.start() : typewriter.stop();
                           .start();
+                      }}
+                      options={{
+                        // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
+                        loop: false,
+                        // autoStart: true,
+                        delay: 45,
+                        // pauseFor: 100000,
                       }}
                     />
                   </div>
