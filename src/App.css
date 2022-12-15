@@ -38,6 +38,10 @@
   align-items: center;
   justify-content: space-between;
 }
+
+/* .jasper-video{
+  position: absolute;
+} */
 /* @media (max-width: 700px) {
   .main-content{
     justify-content: space-between;
