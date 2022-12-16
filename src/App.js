@@ -63,9 +63,9 @@ function App() {
 
             {portionCount === 1 ?
               <>
-                <ReactPlayer className="d-none" url={Jaspermp4} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} playsinline={true} />
+                <ReactPlayer className="d-none" url={Coming} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} playsinline={true} />
 
-                <ReactPlayer width="200px" height="200px" className="jasper-video" url={JasperVid} playing={true} controls={false} volume={1} muted={false} loop={false} /> 
+                <ReactPlayer width="200px" height="200px" className="jasper-video" url={Jaspermp4} playing={true} controls={false} volume={1} muted={false} loop={false} /> 
               </>
               : portionCount === 2 ?
                 <>
