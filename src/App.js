@@ -92,7 +92,7 @@ function App() {
                       : ''}
                   </div>
 
-                  <a className="intent-tweet-link animate__animated animate__fadeInUp" href="https://twitter.com/intent/tweet?%0a&url=https%3A%2F%2Ftwitter.com%2Fshylocknft%2Fstatus%2F1600556103976488962%3Fs%3D46%26t%3DsVT79eisuh7ca-VdLLCnLA&%0a&via=shylocknft&%0a&text=I%27m%20here%20in%20Tokyo%20(%E6%9D%B1%E4%BA%AC)%2C%20psyched%20to%20meet%20the%20most%20famous%20Detective%20Shylock%2C%20and%20eager%20to%20solve%20cases%20with%20him.%20Not%20only%20that%20early%20entrants%20will%20receive%20a%20Entry%20access.%0a&hashtags=SolvewithShylock">
+                  <a className="intent-tweet-link animate__animated animate__fadeInUp" href=" https://twitter.com/intent/tweet?text=I%27ve%20just%20entered%20the%20shylocknft.com.%20Waiting%20to%20meet%20Detective%20Shylock%20and%20get%20early%20access%20to%20the%20Shades.">
                     <button className="intent-tweet">
                       WAITING ROOM
                     </button>
