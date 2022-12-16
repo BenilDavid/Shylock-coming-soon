@@ -6,8 +6,9 @@ import ReactPlayer from 'react-player';
 import Coming from './Audio/coming-soon.mp3';
 import Typing from './Audio/typeSound.mp3';
 import Bgm from './Audio/shylock-bgm.mp3';
-import JasperVid from './Audio/jasper.webm';
-import JasperMov from './Audio/jasper.mov';
+import Jaspermp4 from './Audio/jasper.mp4';
+// import JasperVid from './Audio/jasper.webm';
+// import JasperMov from './Audio/jasper.mov';
 import Typewriter from 'typewriter-effect';
 import 'animate.css';
 
@@ -62,7 +63,7 @@ function App() {
 
             {portionCount === 1 ?
               <>
-                <ReactPlayer className="d-none" url={[Coming, JasperMov]} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} playsinline={true} />
+                <ReactPlayer className="d-none" url={Jaspermp4} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} playsinline={true} />
 
                 <ReactPlayer width="200px" height="200px" className="jasper-video" url={JasperVid} playing={true} controls={false} volume={1} muted={false} loop={false} /> 
               </>
