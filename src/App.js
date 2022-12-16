@@ -3,7 +3,7 @@ import logo from './shylock-final-logo.png';
 import './App.css';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
-import Coming from './Audio/coming-soon.mp3';
+import Coming from './Audio/jasper-voice.mp3';
 import Typing from './Audio/typeSound.mp3';
 import Bgm from './Audio/shylock-bgm.mp3';
 import Jaspermp4 from './Audio/jasper.mp4';
