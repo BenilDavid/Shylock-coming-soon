@@ -3,7 +3,7 @@ import logo from './shylock-logo.png';
 import './App.css';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
-import Coming from './Audio/jasper-voice.mp3';
+// import Coming from './Audio/jasper-voice.mp3';
 import Typing from './Audio/typeSound.mp3';
 import Bgm from './Audio/shylock-bgm.mp3';
 import JasperVoiceWave from './Audio/jasper-voice-wave.mp4';
@@ -24,9 +24,9 @@ function App() {
     setportionCount(1);
   }
 
-  const EndOfVoice = () => {
-    // setportionCount(2);
-  }
+  // const EndOfVoice = () => {
+  //   setportionCount(2);
+  // }
 
   const TypingAudioReady = () => {
     setTypingAudio(true);
