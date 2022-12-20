@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import logo from './shylock-final-logo.png';
+import logo from './shylock-logo.png';
 import './App.css';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
 import Coming from './Audio/jasper-voice.mp3';
 import Typing from './Audio/typeSound.mp3';
 import Bgm from './Audio/shylock-bgm.mp3';
-import Jaspermp4 from './Audio/jasper.mp4';
+import JasperVoiceWave from './Audio/jasper-voice-wave.mp4';
 // import JasperVid from './Audio/jasper.webm';
 // import JasperMov from './Audio/jasper.mov';
 import Typewriter from 'typewriter-effect';
@@ -21,11 +21,11 @@ function App() {
   const [portionCount, setportionCount] = useState(0);
 
   const Initiation = () => {
-      setportionCount(1);
+    setportionCount(1);
   }
 
   const EndOfVoice = () => {
-    setportionCount(2);
+    // setportionCount(2);
   }
 
   const TypingAudioReady = () => {
@@ -53,19 +53,46 @@ function App() {
               </>
               : ""}
 
-            <img src={logo} className="App-logo" alt="logo" />
-            
-            {/* <video controls="controls" width="800" height="600" name="Video Name">
-              <source src={JasperVid} />
-            </video> */}
+            <div className="logo-container">
+              <img src={logo} className="shylock-logo" alt="logo" />
+            </div>
+            {portionCount === 1 ?
+              <ReactPlayer width="200px" height="200px" className="jasper-video" url={JasperVoiceWave} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} />
+              : ""}
+
+            <div className="static-passage">
+              Welcome everyone, I will be clarifying you the details of Shylock’s Festive season Challenge. Shylock decides to conduct tasks and missions for you and your friends to solve.
+            </div>
 
             <button className={`initiate-btn  ${portionCount === 1 ? "animate__animated animate__fadeOut d-none" : portionCount !== 0 ? "d-none" : "animate__animated animate__fadeInUp animate__delay-1s"}`} onClick={Initiation}> BEGIN </button>
 
             {portionCount === 1 ?
               <>
-                <ReactPlayer className="d-none" url={Coming} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} />
+                {/* <ReactPlayer className="d-none" url={Coming} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} /> */}
 
-                <ReactPlayer width="200px" height="200px" className="jasper-video" url={Jaspermp4} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} /> 
+
+
+                <div className="passage">
+                  <Typewriter
+                    onInit={(typewriter) => {
+                      typewriter
+                        .typeString('At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
+                        .pauseFor(1000)
+                        .typeString('When in doubt: Look for The Shades.')
+                        .callFunction(() => {
+                          setTypingAudio(false);
+                        })
+                        .start();
+                    }}
+                    options={{
+                      // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
+                      loop: false,
+                      // autoStart: true,
+                      delay: 60,
+                      pauseFor: 100000,
+                    }}
+                  />
+                </div>
               </>
               : portionCount === 2 ?
                 <>
@@ -75,7 +102,7 @@ function App() {
                     {startType ?
                       <Typewriter
                         onInit={(typewriter) => {
-                          typewriter.typeString('Early Interactions in the waiting room will be rewarded a Entry access. Time is running out.')
+                          typewriter.typeString('Welcome everyone, I will be clarifying you the details of Shylock’s Festive season Challenge.Shylock decides to conduct tasks and missions for you and your friends to solve.')
                             .callFunction(() => {
                               setTypingAudio(false);
                             })

@@ -3,8 +3,9 @@
   /* background-color: #191919; */
 }
 
-.App-logo {
-  height: 40vmin;
+.shylock-logo {
+  margin: 10px 0;
+  height: 30vmin;
   pointer-events: none;
 }
 
@@ -33,20 +34,19 @@
 }
 .main-content{
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
+.static-passage{
+  font-size: 1rem;
+}
+.Typewriter__wrapper{
+  font-size: 1rem;
+}
 
-/* .jasper-video{
-  position: absolute;
-} */
-/* @media (max-width: 700px) {
-  .main-content{
-    justify-content: space-between;
-  }
-} */
 .main-content .type-container{
   font-size: calc(10px + 1.5vmin);
   width: clamp(200px, 40%,  400px);
