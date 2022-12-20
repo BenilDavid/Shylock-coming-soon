@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from './shylock-logo.png';
-import './App.css';
+import './App.scss';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
 // import Coming from './Audio/jasper-voice.mp3';
@@ -14,7 +14,7 @@ import 'animate.css';
 
 function App() {
 
-  // const [jasperAudio, setjasperAudio] = useState(false);
+  const [hideVideo, setHideVideo] = useState(false);
   const [typingAudio, setTypingAudio] = useState(false);
   const [startType, setStartType] = useState(false);
   // const [bgmAudio, setBgmAudio] = useState(false);
@@ -33,9 +33,10 @@ function App() {
     setStartType(true);
   }
 
-  // const VoiceReady = () => {
-  //   setjasperAudio(true);
-  // }
+  const jasperVideoEnded = () => {
+    console.log("video ended");
+    setHideVideo(true);
+  }
 
   // const BgmReady = () => {
   //   setBgmAudio(true);
@@ -43,9 +44,17 @@ function App() {
 
   return (
     <div className="App">
+     
       <header className="App-header">
-
         <div className="container">
+
+ {portionCount === 1 ?
+       <div className={`video-container ${hideVideo ? "d-none" : ""}`}>
+       <ReactPlayer className={`jasper-video`} url={JasperVoiceWave} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} onEnded={jasperVideoEnded} />
+     </div>
+        : ""}
+        
+
           <div className="main-content">
             {portionCount !== 0 ?
               <>
@@ -56,15 +65,9 @@ function App() {
             <div className="logo-container">
               <img src={logo} className="shylock-logo" alt="logo" />
               <div className="static-passage">
-              Shylock’s Festive season Challenge.
+                Shylock’s Festive season Challenge.
+              </div>
             </div>
-            </div>
-
-          
-
-            {portionCount === 1 ?
-              <ReactPlayer width="200px" height="200px" className="jasper-video animate__animated animate__fadeInLeft" url={JasperVoiceWave} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} />
-              : ""}
 
             <button className={`initiate-btn  ${portionCount === 1 ? "animate__animated animate__fadeOut d-none" : portionCount !== 0 ? "d-none" : "animate__animated animate__fadeInUp animate__delay-1s"}`} onClick={Initiation}> BEGIN </button>
 
@@ -72,13 +75,11 @@ function App() {
               <>
                 {/* <ReactPlayer className="d-none" url={Coming} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} /> */}
 
-
-
                 <div className="passage">
                   <Typewriter
                     onInit={(typewriter) => {
                       typewriter
-                          .typeString('Welcome everyone, I will be clarifying you the details of Shylock’s Festive season Challenge. Shylock decides to conduct tasks and missions for you and your friends to solve. At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
+                        .typeString('Welcome everyone, I will be clarifying you the details of Shylock’s Festive season Challenge. Shylock decides to conduct tasks and missions for you and your friends to solve. At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
                         .typeString('When in doubt: Look for The Shades.')
                         .callFunction(() => {
                           setTypingAudio(false);
@@ -89,7 +90,7 @@ function App() {
                       // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
                       loop: false,
                       // autoStart: true,
-                      delay: 60,
+                      delay: 46,
                       pauseFor: 100000,
                     }}
                   />

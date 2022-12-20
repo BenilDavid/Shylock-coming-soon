@@ -19,6 +19,6 @@ body {
   background: linear-gradient(0deg, #1f0b00 0%, #000000 100%); */
 }
 
-code {
-  font-family: 'IBM Plex Mono', monospace;
+.d-none{
+  display: none;
 }

@@ -1,0 +1,125 @@
+.App {
+  text-align: center;
+  /* background-color: #191919; */
+  .App-header {
+    /* background-color: #191919; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #ff8012;
+
+    .container {
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+      justify-content: space-between;
+      width: 95%;
+      height: 90vh;
+      margin: 20px;
+      border: 1px solid #ff8012;
+      /* border: 1px solid #d5a46b; */
+      border-radius: 5px;
+      position: absolute;
+
+      // .video-container{
+      //   z-index: -1;
+      // position: absolute;
+      // top: 50%;
+      //   right: 50%;
+      .jasper-video {
+        // width: 100% !important;
+        // height: 100% !important;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 40%);
+        opacity: 0.2;
+      }
+      // }
+      .main-content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        .logo-container {
+          z-index: 100;
+          .shylock-logo {
+            margin: 20px 0 0 0;
+            height: 12vmin;
+            pointer-events: none;
+          }
+          .static-passage {
+            font-size: 0.8rem;
+            font-family: sherlockVintage;
+            letter-spacing: 0.2rem;
+            color: #fff;
+          }
+        }
+        .passage{
+          z-index: 100;
+          width: 80%;
+        }
+
+        .type-container {
+          font-size: calc(10px + 1.5vmin);
+          width: clamp(200px, 40%, 400px);
+          margin: 0 0 20px 0;
+        }
+      }
+    }
+  }
+}
+
+.Typewriter__wrapper {
+  font-size: 1rem;
+}
+
+.intent-tweet,
+.initiate-btn {
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #ff8012;
+  outline: none;
+  border: 1px solid #ff8012;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.intent-tweet-link {
+  animation-delay: 6s;
+  .intent-tweet a {
+    text-decoration: none;
+    color: #ff8012;
+  }
+}
+
+// footer
+.footer {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+
+  .twitter-btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: transparent;
+    /* animation-delay: 6s; */
+    .twitter-logo {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 10px;
+      top: 12px;
+    }
+  }
+}
