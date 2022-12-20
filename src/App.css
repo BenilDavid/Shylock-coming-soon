@@ -2,7 +2,18 @@
   text-align: center;
   /* background-color: #191919; */
 }
-
+.static-passage{
+  font-family: sherlockVintage;
+  letter-spacing: 0.3rem;
+  color: #fff;
+}
+/* .jasper-video{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+} */
 .shylock-logo {
   margin: 20px 0 0 0;
   height: 25vmin;

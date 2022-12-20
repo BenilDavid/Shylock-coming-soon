@@ -55,14 +55,16 @@ function App() {
 
             <div className="logo-container">
               <img src={logo} className="shylock-logo" alt="logo" />
+              <div className="static-passage">
+              Shylock’s Festive season Challenge.
             </div>
-            {portionCount === 1 ?
-              <ReactPlayer width="200px" height="200px" className="jasper-video" url={JasperVoiceWave} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} />
-              : ""}
+            </div>
 
-            <div className="static-passage">
-              Welcome everyone, I will be clarifying you the details of Shylock’s Festive season Challenge. Shylock decides to conduct tasks and missions for you and your friends to solve.
-            </div>
+          
+
+            {portionCount === 1 ?
+              <ReactPlayer width="200px" height="200px" className="jasper-video animate__animated animate__fadeInLeft" url={JasperVoiceWave} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} />
+              : ""}
 
             <button className={`initiate-btn  ${portionCount === 1 ? "animate__animated animate__fadeOut d-none" : portionCount !== 0 ? "d-none" : "animate__animated animate__fadeInUp animate__delay-1s"}`} onClick={Initiation}> BEGIN </button>
 
@@ -76,8 +78,7 @@ function App() {
                   <Typewriter
                     onInit={(typewriter) => {
                       typewriter
-                        .typeString('At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
-                        .pauseFor(1000)
+                          .typeString('Welcome everyone, I will be clarifying you the details of Shylock’s Festive season Challenge. Shylock decides to conduct tasks and missions for you and your friends to solve. At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
                         .typeString('When in doubt: Look for The Shades.')
                         .callFunction(() => {
                           setTypingAudio(false);
