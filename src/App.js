@@ -11,6 +11,7 @@ import JasperVoiceWave from './Audio/jasper-vocal-wave.mp4';
 // import JasperMov from './Audio/jasper.mov';
 import Typewriter from 'typewriter-effect';
 import 'animate.css';
+import AnalogClock from 'analog-clock-react';
 
 function App() {
 
@@ -19,6 +20,20 @@ function App() {
   const [startType, setStartType] = useState(false);
   // const [bgmAudio, setBgmAudio] = useState(false);
   const [portionCount, setportionCount] = useState(0);
+
+  let options = {
+    width: "130px",
+    border: true,
+    borderColor: "#2e2e2e",
+    baseColor: "#000",
+    centerColor: "#2e2e2e",
+    centerBorderColor: "#ff8012",
+    handColors: {
+      second: "#fff",
+      minute: "#ff8012",
+      hour: "#ff8012"
+    }
+  };
 
   const daysData = [
     {
@@ -134,8 +149,8 @@ function App() {
                       onInit={(typewriter) => {
                         typewriter
                           .typeString('Welcome everyone,I will be here with you clarifying the details of Shylock’s Festive season Challenge. Shylock decides to conduct tasks and missions for you and your friends to solve together.')
-                          .typeString('At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
-                          .typeString('When in doubt: Look for The Shades.')
+                          .typeString(' At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
+                          .typeString(' When in doubt look out for the shades.')
                           .callFunction(() => {
                             setTypingAudio(false);
                           })
@@ -150,7 +165,8 @@ function App() {
                   </div>
                   <div className="boxes-container">
                     <div className="rules-box-container">
-                      <div>Rules</div>
+                      <AnalogClock {...options} />
+                      {/* <div>Rules</div>
                       <div className="rules">
                         <ul>
                           <li>Participants must provide their accurate Twitter username when participating in the quest.</li>
@@ -159,18 +175,14 @@ function App() {
                           <li>Answers should not contain any NSFW (not safe for work) words.</li>
                           <li>Failure to follow any of the above rules will result in disqualification from the quest.</li>
                         </ul>
-                      
-                        {/* 2. 
-                        3. 
-                        4.  5.  */}
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="days-box-container">
                       <span className="days-heading">Daily Quests</span>
                       <div className="days-container">
                         {daysData.map(({ id, day, isOpen }) => {
-                          return <div key={id} className="days-box">
+                          return <div key={id} className={`days-box ${isOpen ? "unlocked-day" : "locked-day"}`}>
                             <span>{day}</span>
                           </div>
                         })}
@@ -179,13 +191,12 @@ function App() {
 
                     <div className="time-box-container">
                       <div>
-                        Starting Time: 10:30 AM EST
-                        Quest Live: for 24 hours
-                        Answers: Follow @shylockagents
+                        <p>Starting Time: 10:30 AM (EST)</p>
+                        <p> Quest Live for 24 hours</p>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>  
               </>
               : portionCount === 2 ?
                 <>
