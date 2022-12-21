@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import logo from './shylock-logo.png';
+import logo from './shylock-christmas-logo.png';
 import './App.scss';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
 // import Coming from './Audio/jasper-voice.mp3';
 import Typing from './Audio/typeSound.mp3';
 import Bgm from './Audio/shylock-bgm.mp3';
-import JasperVoiceWave from './Audio/jasper-voice-wave.mp4';
+import JasperVoiceWave from './Audio/jasper-vocal-wave.mp4';
 // import JasperVid from './Audio/jasper.webm';
 // import JasperMov from './Audio/jasper.mov';
 import Typewriter from 'typewriter-effect';
@@ -19,6 +19,59 @@ function App() {
   const [startType, setStartType] = useState(false);
   // const [bgmAudio, setBgmAudio] = useState(false);
   const [portionCount, setportionCount] = useState(0);
+
+  const daysData = [
+    {
+      id: 1,
+      day: 1,
+      isOpen: true,
+    },
+    {
+      id: 2,
+      day: 2,
+      isOpen: false,
+    },
+    {
+      id: 3,
+      day: 3,
+      isOpen: false,
+    },
+    {
+      id: 4,
+      day: 4,
+      isOpen: false,
+    },
+    {
+      id: 5,
+      day: 5,
+      isOpen: false,
+    },
+    {
+      id: 6,
+      day: 6,
+      isOpen: false,
+    },
+    {
+      id: 7,
+      day: 7,
+      isOpen: false,
+    },
+    {
+      id: 8,
+      day: 8,
+      isOpen: false,
+    },
+    {
+      id: 9,
+      day: 9,
+      isOpen: false,
+    },
+    {
+      id: 10,
+      day: 10,
+      isOpen: false,
+    },
+  ]
 
   const Initiation = () => {
     setportionCount(1);
@@ -44,16 +97,15 @@ function App() {
 
   return (
     <div className="App">
-     
+
       <header className="App-header">
         <div className="container">
 
- {portionCount === 1 ?
-       <div className={`video-container ${hideVideo ? "d-none" : ""}`}>
-       <ReactPlayer className={`jasper-video`} url={JasperVoiceWave} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} onEnded={jasperVideoEnded} />
-     </div>
-        : ""}
-        
+          {portionCount === 1 ?
+            <div className={`video-container ${hideVideo ? "d-none" : ""}`}>
+              <ReactPlayer className={`jasper-video`} url={JasperVoiceWave} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} onEnded={jasperVideoEnded} />
+            </div>
+            : ""}
 
           <div className="main-content">
             {portionCount !== 0 ?
@@ -74,26 +126,65 @@ function App() {
             {portionCount === 1 ?
               <>
                 {/* <ReactPlayer className="d-none" url={Coming} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} /> */}
+                {/* <ReactPlayer className="d-none" url={Typing} playing={typingAudio} controls={true} volume={1} muted={false} loop={true} playbackRate={1} onReady={TypingAudioReady} /> */}
 
-                <div className="passage">
-                  <Typewriter
-                    onInit={(typewriter) => {
-                      typewriter
-                        .typeString('Welcome everyone, I will be clarifying you the details of Shylock’s Festive season Challenge. Shylock decides to conduct tasks and missions for you and your friends to solve. At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
-                        .typeString('When in doubt: Look for The Shades.')
-                        .callFunction(() => {
-                          setTypingAudio(false);
-                        })
-                        .start();
-                    }}
-                    options={{
-                      // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
-                      loop: false,
-                      // autoStart: true,
-                      delay: 46,
-                      pauseFor: 100000,
-                    }}
-                  />
+                <div className="internal-content">
+                  <div className="passage">
+                    <Typewriter
+                      onInit={(typewriter) => {
+                        typewriter
+                          .typeString('Welcome everyone,I will be here with you clarifying the details of Shylock’s Festive season Challenge. Shylock decides to conduct tasks and missions for you and your friends to solve together.')
+                          .typeString('At the end of Shylock’s Festive Season Challenge, you and your friends will be rewarded with exciting gifts and present from Detective Shylock. Every participant is considered and rewarded deservingly.')
+                          .typeString('When in doubt: Look for The Shades.')
+                          .callFunction(() => {
+                            setTypingAudio(false);
+                          })
+                          .start();
+                      }}
+                      options={{
+                        loop: false,
+                        delay: 46,
+                        pauseFor: 100000,
+                      }}
+                    />
+                  </div>
+                  <div className="boxes-container">
+                    <div className="rules-box-container">
+                      <div>Rules</div>
+                      <div className="rules">
+                        <ul>
+                          <li>Participants must provide their accurate Twitter username when participating in the quest.</li>
+                          <li>Participants must follow and turn on notifications for both the @shylocknft and @shylockagents Twitter profiles.</li>
+                          <li>Participants must tag atleast 3 potential agents (friends) in their respective tweet after completing the quest.</li>
+                          <li>Answers should not contain any NSFW (not safe for work) words.</li>
+                          <li>Failure to follow any of the above rules will result in disqualification from the quest.</li>
+                        </ul>
+                      
+                        {/* 2. 
+                        3. 
+                        4.  5.  */}
+                      </div>
+                    </div>
+
+                    <div className="days-box-container">
+                      <span className="days-heading">Daily Quests</span>
+                      <div className="days-container">
+                        {daysData.map(({ id, day, isOpen }) => {
+                          return <div key={id} className="days-box">
+                            <span>{day}</span>
+                          </div>
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="time-box-container">
+                      <div>
+                        Starting Time: 10:30 AM EST
+                        Quest Live: for 24 hours
+                        Answers: Follow @shylockagents
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </>
               : portionCount === 2 ?
