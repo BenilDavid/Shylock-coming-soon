@@ -21,7 +21,7 @@ function App() {
   const [portionCount, setportionCount] = useState(0);
 
   const Initiation = () => {
-      setportionCount(1);
+    setportionCount(1);
   }
 
   const EndOfVoice = () => {
@@ -54,7 +54,7 @@ function App() {
               : ""}
 
             <img src={logo} className="App-logo" alt="logo" />
-            
+
             {/* <video controls="controls" width="800" height="600" name="Video Name">
               <source src={JasperVid} />
             </video> */}
@@ -65,7 +65,7 @@ function App() {
               <>
                 <ReactPlayer className="d-none" url={Coming} playing={true} controls={true} volume={1} muted={false} loop={false} onEnded={EndOfVoice} />
 
-                <ReactPlayer width="200px" height="200px" className="jasper-video" url={Jaspermp4} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} /> 
+                <ReactPlayer width="200px" height="200px" className="jasper-video" url={Jaspermp4} playing={true} controls={false} volume={1} muted={false} loop={false} playsinline={true} />
               </>
               : portionCount === 2 ?
                 <>
@@ -97,9 +97,11 @@ function App() {
                       WAITING ROOM
                     </button>
                   </a>
+
+                  <p className="must-follow animate__animated animate__fadeInUp">Must Follow @shylocknft</p>
                 </>
                 : ""}
-
+           
             <div className='footer'>
               <button className="twitter-btn">
                 <a href="https://twitter.com/shylocknft">

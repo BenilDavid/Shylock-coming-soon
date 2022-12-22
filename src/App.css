@@ -98,3 +98,8 @@ top:12px;
 .intent-tweet-link {
   animation-delay: 6s;
 }
+
+.must-follow{
+  font-size: calc(10px + 1.5vmin);
+  animation-delay: 7s;
+}
