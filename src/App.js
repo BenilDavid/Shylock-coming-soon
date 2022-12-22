@@ -98,7 +98,7 @@ function App() {
                     </button>
                   </a>
 
-                  <p className="must-follow animate__animated animate__fadeInUp">Must Follow @shylocknft</p>
+                  <p className="must-follow animate__animated animate__fadeInUp">Follow @shylocknft</p>
                 </>
                 : ""}
            
