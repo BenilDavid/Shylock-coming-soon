@@ -4,21 +4,19 @@ import './App.css';
 import twitterIcon from './twitter.png';
 import ReactPlayer from 'react-player';
 import Coming from './Audio/jasper-voice.mp3';
-import Typing from './Audio/typeSound.mp3';
+import Typing from './Audio/typingAudio.mp3';
 import Bgm from './Audio/shylock-bgm.mp3';
 import Jaspermp4 from './Audio/jasper.mp4';
-// import JasperVid from './Audio/jasper.webm';
-// import JasperMov from './Audio/jasper.mov';
 import Typewriter from 'typewriter-effect';
 import 'animate.css';
 
 function App() {
 
-  // const [jasperAudio, setjasperAudio] = useState(false);
   const [typingAudio, setTypingAudio] = useState(false);
   const [startType, setStartType] = useState(false);
-  // const [bgmAudio, setBgmAudio] = useState(false);
   const [portionCount, setportionCount] = useState(0);
+const [shake, setShake] = useState(false);
+const [showDenied, setShowDenied] = useState(false);
 
   const Initiation = () => {
     setportionCount(1);
@@ -32,14 +30,15 @@ function App() {
     setTypingAudio(true);
     setStartType(true);
   }
+  const onWaitingRoomClick = () => {
+    console.log("waiting room clicked");
+    setShake(true);
+    setTimeout(() => {
+    setShake(false);
+    }, 500);
 
-  // const VoiceReady = () => {
-  //   setjasperAudio(true);
-  // }
-
-  // const BgmReady = () => {
-  //   setBgmAudio(true);
-  // }
+    setShowDenied(true);
+  }
 
   return (
     <div className="App">
@@ -54,10 +53,6 @@ function App() {
               : ""}
 
             <img src={logo} className="App-logo" alt="logo" />
-
-            {/* <video controls="controls" width="800" height="600" name="Video Name">
-              <source src={JasperVid} />
-            </video> */}
 
             <button className={`initiate-btn  ${portionCount === 1 ? "animate__animated animate__fadeOut d-none" : portionCount !== 0 ? "d-none" : "animate__animated animate__fadeInUp animate__delay-1s"}`} onClick={Initiation}> BEGIN </button>
 
@@ -75,16 +70,16 @@ function App() {
                     {startType ?
                       <Typewriter
                         onInit={(typewriter) => {
-                          typewriter.typeString('Early Interactions in the waiting room will be rewarded a Entry access. Time is running out.')
+                          typewriter.typeString('Well done, to those who were Early. The Waiting room is now cramped with Future Agents. We are evaluating the responses.')
+                          .pauseFor(300)
+                          .typeString(' Stay tuned.')
                             .callFunction(() => {
                               setTypingAudio(false);
                             })
                             .start();
                         }}
                         options={{
-                          // strings: ['Early Interactions in the waiting room will be rewarded a POAP. Time is running out.'],
                           loop: false,
-                          // autoStart: true,
                           delay: 60,
                           pauseFor: 100000,
                         }}
@@ -92,16 +87,21 @@ function App() {
                       : ''}
                   </div>
 
-                  <a className="intent-tweet-link animate__animated animate__fadeInUp" href=" https://twitter.com/intent/tweet?text=I%27ve%20just%20entered%20the%20shylocknft.com.%20Waiting%20to%20meet%20Detective%20Shylock%20and%20get%20early%20access%20to%20The%20Shades.%0a&via=shylocknft&%0a&url=https%3A%2F%2Ftwitter.com%2Fshylocknft%2Fstatus%2F1604180496463802370%3Fs%3D20%26t%3DrfXGfH-kpQgSvDNjy4ArCg%0a&hashtags=SolvewithShylock">
-                    <button className="intent-tweet">
-                      WAITING ROOM
+                  {/* <a className="intent-tweet-link animate__animated animate__fadeInUp" href=" https://twitter.com/intent/tweet?text=I%27ve%20just%20entered%20the%20shylocknft.com.%20Waiting%20to%20meet%20Detective%20Shylock%20and%20get%20early%20access%20to%20The%20Shades.%0a&via=shylocknft&%0a&url=https%3A%2F%2Ftwitter.com%2Fshylocknft%2Fstatus%2F1604180496463802370%3Fs%3D20%26t%3DrfXGfH-kpQgSvDNjy4ArCg%0a&hashtags=SolvewithShylock"> */}
+                  <div className="intent-tweet-link animate__animated animate__fadeInUp">
+                  <button className={`intent-tweet ${shake ? 'animate__animated animate__shakeX' : ""}`} onClick={onWaitingRoomClick}>
+                      {showDenied ? "ACCESS DENIED" : "WAITING ROOM"}
                     </button>
-                  </a>
+                  </div>
+                   {showDenied ? 
+                   <p className="quest-text animate__animated animate__fadeInUp animate__delay-2s">Quest Coming soon</p>
+                  : ""}
+                  {/* </a> */}
 
                   <p className="must-follow animate__animated animate__fadeInUp">Follow @shylocknft</p>
                 </>
                 : ""}
-           
+
             <div className='footer'>
               <button className="twitter-btn">
                 <a href="https://twitter.com/shylocknft">
@@ -109,7 +109,6 @@ function App() {
                 </a>
               </button>
             </div>
-
           </div>
 
         </div>

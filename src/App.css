@@ -4,7 +4,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 35vmin;
   pointer-events: none;
 }
 
@@ -49,7 +49,7 @@
 } */
 .main-content .type-container{
   font-size: calc(10px + 1.5vmin);
-  width: clamp(200px, 40%,  400px);
+  width: clamp(200px, 40%,  500px);
   margin: 0 0 20px 0;
 }
 .footer{
@@ -96,10 +96,15 @@ top:12px;
 }
 
 .intent-tweet-link {
-  animation-delay: 6s;
+  animation-delay: 9s;
 }
 
 .must-follow{
+  margin: 0;
   font-size: calc(10px + 1.3vmin);
   animation-delay: 7s;
+}
+
+.quest-text{
+  font-size: calc(10px + 1.3vmin);
 }
